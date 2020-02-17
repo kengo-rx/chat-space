@@ -25,7 +25,7 @@
 |name|string|index: true, null: false, unique: true|
 
 ### Association
-- belongs_to :user
+- has_many :users, through :members
 - has_many :members
 - has_many :messages
 
