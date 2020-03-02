@@ -2,13 +2,13 @@
  .side-hedar
   .side-hedar__box
    %p.side-hedar__box__username
-    masa
+    = current_user.name
    %ul.side-hedar__box__menu
     %li.side-hedar__box__menu__edit-user
-     = link_to "#" do
+     = link_to do
       = icon('fas', 'edit')
     %li.side-hedar__box__menu__new-group
-     = link_to "#" do
+     = link_to edit_user_path(current_user) do
       = icon('fas', 'cog')
  .groups
   .group
