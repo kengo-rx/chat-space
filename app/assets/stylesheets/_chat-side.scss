@@ -4,7 +4,7 @@
   height: 100vh;
   float: left;
 
-.side-hedar {
+ .side-hedar {
   background-color:#253141;
   display: flex;
   align-items: center;
@@ -30,12 +30,12 @@
 
           a {
            color: white;
-     }
-    }
-   }
-  }   
+          }
+        }
+      }
+   }   
  }
-}
+
  .groups {
   height: calc(100vh - 100px);
   background-color: #2f3e51;
@@ -54,4 +54,5 @@
     font-size: 11px;
     }
   }
+ }
 }
