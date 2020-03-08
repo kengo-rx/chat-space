@@ -2,14 +2,14 @@
  .main-hedar
   .main-hedar__left-box
    %h2.main-hedar__left-box__current-group
-    test
+    = @group.name
    %ul.main-hedar__left-box__member-list
     Member： 
     %li.main-hedar__left-box__member-list__member
-    masa
-  %a(href='#')
-   .main-hedar__edit-btn
-    Edit
+    - @group.users.each do |user|
+     = user.name
+  .main-hedar__edit-btn
+   = link_to "Edit",edit_group_path(@group.id)
  .messages
   .message
    .message__upper-info
@@ -20,11 +20,12 @@
    %p.message__text
     おはよう
  .form
-  %form.new_message
+  = form_for [@group, @message] do |f|
    .input-box
-    %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-    %label{class: "input-box__image"}
-     = icon('fas', 'image')
-     %input{type: "file", class: "input-box__image__file"}
-   %input{type: "submit", class: "submit-btn", value: "Send"}
+    = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+    = f.label :image, class: 'input-box__image' do
+     = icon('fa', 'image')
+     = f.file_field :image, class: 'input-box__image__file'
+   = f.submit 'Send', class: 'submit-btn'
+    
    
